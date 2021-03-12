@@ -30,8 +30,6 @@ module.exports = {
     async createPost(_, { body }, context) {
       const user = checkAuth(context);
 
-      console.log(user);
-
       const newPost = new Post({
         body,
         user: user.indexOf,
@@ -45,7 +43,6 @@ module.exports = {
     },
     async deletePost(_, { postId }, context) {
       const user = checkAuth(context);
-      console.log(user);
       try {
         const post = await Post.findById(postId);
 
